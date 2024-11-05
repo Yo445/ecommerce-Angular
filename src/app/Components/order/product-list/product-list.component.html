@@ -1,0 +1,35 @@
+<div
+  class="table-responsive"
+>
+
+  <table
+    class="table table-primary mt-2 mb-0"
+  >
+    <thead>
+      <tr>
+        <th scope="col">NO.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Img</th>
+        <th scope="col">AV. Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of PrdctList index as i"  > <!-- this name class binding [ngClass]="{'d-none': selectCatID != prd.categoryID}"-->
+        <td> {{i+1}} </td>
+        <td> {{prd?.id}} </td>
+        <td> {{prd.name}} </td>
+        <td> <img LightBox [src]="prd.imgUrl" alt="prd.name"> </td>
+        <td> {{prd.quantity}} </td>
+        <td> {{prd.price}} </td>
+        <td> <input #itemsCount type="number"> </td>
+        <!-- <td> <button (click)="buyPr(prd.price, itemsCount.value )" class="btn btn-success">Buy</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+</div>
+

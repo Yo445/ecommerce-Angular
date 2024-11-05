@@ -1,0 +1,26 @@
+<div>
+  <h2>Create Your Order: </h2>
+  <div class="mb-3">
+    <label for="prdcat" class="form-label">Category:</label>
+    <select
+      class="form-select form-select-lg"
+      name="cat"
+      id="prdcat"
+      [(ngModel)]="selectCatID"
+      (change)="filterbyCategoryID"
+    >
+      <option #cat *ngFor="let cat of catList" [value]="cat.id">
+        {{ cat.name }}
+      </option>
+    </select>
+  </div>
+  <!-- <div class="text-secondary">
+    [To be removed]: for test:
+    {{ selectCatID }}
+  </div> -->
+  <hr>
+
+  <app-product-list></app-product-list>
+
+  <h3>Total Price: {{ totalPrice | currency }}</h3>
+</div>
